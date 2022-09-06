@@ -17,7 +17,11 @@ struct SourceryCommand: CommandPlugin {
         process.executableURL = sourceryURL
         process.arguments = [
             "--disableCache",
+            "--config",
+            context.package.directory.string,
             "--sources",
+            context.package.directory.string,
+            "--templates",
             context.package.directory.string
         ]
         
