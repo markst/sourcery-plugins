@@ -16,7 +16,9 @@ struct SourceryCommand: CommandPlugin {
         let process = Process()
         process.executableURL = sourceryURL
         process.arguments = [
-            "--disableCache"
+            "--disableCache",
+            "--sources",
+            context.package.directory.string
         ]
         
         try process.run()
